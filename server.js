@@ -1,28 +1,37 @@
 var express = require('express');
     app = express(),
-    http = require('http').Server(app);
+    http = require('http').Server(app),
     io = require('socket.io')(http);
 
 var port = process.env.PORT || 8000;
 
-app.use('/public', express.static(__dirname + '/public')); // assets (css/js/img)
 
+/*****       assets (css/js/img)    *****/
+
+app.use('/public', express.static(__dirname + '/public')); 
+
+
+/*****      Simple router config    *****/
 
 app.get('/', function (req, res) {
       res.sendFile(__dirname + '/views/index.html');
 });
 
-io.on('connection', function(socket){
+
+/*****      Socket config    *****/
+
+io.on('connection', function(user){
     console.log('User connected');
 
-    socket.on('disconnect', function () {
+    user.on('disconnect', function () {
         console.log('User left the chat');
     });
 
-    socket.on('chat message', function(msg){
+    user.on('chat message', function(msg){
         io.emit('chat message', msg);
     });
 });
+
 
 http.listen(port, function() {
     console.log('App running on port: ' + port);

@@ -1,0 +1,7 @@
+body {
+	background: #CCC;
+	color: blue;
+}
+div, section {
+	border: 1px solid green;
+}

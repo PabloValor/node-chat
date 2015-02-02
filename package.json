@@ -1,7 +1,7 @@
 {
   "name": "node-chat",
   "version": "0.0.1",
-  "description": "A simple Chat using Node, Express and Socket.io",
+  "description": "node chat",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,30 +10,14 @@
     "type": "git",
     "url": "git://github.com/PabloValor/node-chat.git"
   },
-  "keywords": [
-    "chat",
-    "node",
-    "socket",
-    "express"
-  ],
   "author": "Pablo Valor",
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/PabloValor/node-chat/issues"
   },
-  "homepage": "https://github.com/PabloValor/node-chat",
   "dependencies": {
-    "body-parser": "^1.9.2",
-    "express": "^4.10.1",
-    "less": "^1.7.5",
-    "socket.io": "^1.2.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-imagemin": "^1.2.1",
-    "gulp-less": "^1.3.6",
-    "gulp-plumber": "^0.6.6",
-    "gulp-uglify": "^1.0.1",
-    "gulp-util": "^3.0.1"
+    "express": "~4.11.1",
+    "socket.io": "~1.3.2",
+    "swig": "~1.4.2"
   }
 }

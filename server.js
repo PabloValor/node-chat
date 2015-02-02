@@ -1,38 +1,47 @@
-var express = require('express');
-    app = express(),
-    http = require('http').Server(app),
-    io = require('socket.io')(http);
+var http = require('http'),
+	express = require('express');
+	app = express(),
+	server = http.createServer(app),
+	socket = require('socket.io')(server),
+	swig = require('swig');
 
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3030;
 
+/* set view engine Swig */
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/app/public/views/');
+//changed {{ }} by [[ ]] to avoid conflicts with angularjs
+swig.setDefaults({varControls: ['[[',']]']});
 
-/*****       assets (css/js/img)    *****/
+//set static files
+app.use(express.static(__dirname + '/app/public/assets/'));
 
-app.use('/public', express.static(__dirname + '/public')); 
-
-
-/*****      Simple router config    *****/
-
-app.get('/', function (req, res) {
-      res.sendFile(__dirname + '/views/index.html');
+//routes
+app.get('/', function(req, res){
+	res.render('chat',{});
 });
 
 
-/*****      Socket config    *****/
 
-io.on('connection', function(user){
-    console.log('User connected');
 
-    user.on('disconnect', function () {
-        console.log('User left the chat');
-    });
+//chatroom
 
-    user.on('chat message', function(msg){
-        io.emit('chat message', msg);
-    });
+//users connected
+var usernames = {};
+var numUsers = 0;
+
+socket.on('connection', function(socket){
+
+	var addUser = false;
+
+	socket.on('new message', function(data) {
+		console.log(data.message);
+	});
+
+	
 });
 
-
-http.listen(port, function() {
-    console.log('App running on port: ' + port);
+server.listen(port, function(){
+	console.log('listening on port: %d', port);
 });

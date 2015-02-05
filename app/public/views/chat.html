@@ -2,22 +2,14 @@
 
 {% block content %}
 <section>
-	<input type="text" class="chat-name" placeholder="Enter you nickname">
-	<div class="chat-messages">
-		<div class="chat-message">
-			Pablo: hello there!
-		</div>
-		<div class="chat-message">
-			Pablo: hello there!
-		</div>
-		<div class="chat-message">
-			Pablo: hello there!
-		</div>
-		<div class="chat-message">
-			Pablo: hello there!
-		</div>
-	</div>
-	<textarea placeholder="type your message here!"></textarea>
-	<div class="chat-status">Status <span>Idle</span></div>
+	<h2>Welcome {{name}}!</h2>
+
+	<ul id="messages">
+		
+	</ul>
+	<form id="send-messages-form" action="" autocomplete="off">
+		<input type="text" id="m">
+		<button>Send</button>
+	</form>
 </section>
 {% endblock %}

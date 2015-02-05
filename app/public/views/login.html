@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+	<h2>What is your name?</h2>
+	<form action="/" Method="POST" autocomplete="off">
+		<input name="userName" class="userNameInput" type="text" maxlength="14"/>
+		<input type="submit" value="Enter">
+	</form>
+</div>
+{% endblock %}

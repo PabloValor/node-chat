@@ -2,7 +2,8 @@
 
 {% block content %}
 <section>
-	<h2>Welcome {{name}}!</h2>
+	<h2>Welcome <span>{{name}}</span>!</h2>
+	<div id="usersCount"></div>
 
 	<ul id="messages">
 		
@@ -12,4 +13,8 @@
 		<button>Send</button>
 	</form>
 </section>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="http://localhost:3030/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 {% endblock %}

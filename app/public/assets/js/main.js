@@ -22,11 +22,11 @@ $(document).on('ready', function() {
 	});
 
 	socket.on('show newUser', function(data){
-		$('#messages').append($('<li>').text(data.username + ' is online!'));
+		$('#messages').append($('<li class="text-center">').text(data.username + ' is online'));
 	});
 
 	socket.on('user offline', function(data){
-		$('#messages').append($('<li>').text(data.username + ' is offline :('));
+		$('#messages').append($('<li class="text-center">').text(data.username + ' is offline'));
 	});
 
 	socket.on('users counter', function(data) {

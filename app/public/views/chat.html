@@ -1,18 +1,31 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<section>
-	<h2>Welcome <span>{{name}}</span>!</h2>
-	<div id="usersCount"></div>
+<div class="pure-g">
+	<div class="pure-u-4-5">
+		<div class="main-container">
+			<section class="add-margin-bottom common-panel">
+				<ul id="messages"></ul>
+			</section>
+			<form id="send-messages-form" action="" autocomplete="off">
+					<div class="pure-g">
+						<div class="pure-u-4-5">
+							<input type="text" id="m" placeholder="Share something.." class="form-input" id="name" required>
+						</div>
+						<div class="pure-u-1-5">
+							<input type="submit" value="Send"/>	
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+	<div class="pure-u-1-5">
+		<aside class="users common-panel">
+			<span id="usersCount"></span>
+		</aside>
+	</div>
+</div>
 
-	<ul id="messages">
-		
-	</ul>
-	<form id="send-messages-form" action="" autocomplete="off">
-		<input type="text" id="m">
-		<button>Send</button>
-	</form>
-</section>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="http://localhost:3030/socket.io/socket.io.js"></script>

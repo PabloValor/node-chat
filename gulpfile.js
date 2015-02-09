@@ -47,7 +47,8 @@ gulp.task('compress-javascript', function() {
 
 gulp.task('less', function() {
 	gulp.src([	
-				paths.styles.src + 'bootstrap.min.css',
+				paths.styles.src + 'pure.min.css',
+				paths.styles.src + 'base.less',
 				paths.styles.src + '*.less'
 			])
 		.pipe(less())

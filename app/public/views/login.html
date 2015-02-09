@@ -1,11 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div>
-	<h2>What is your name?</h2>
+<div class="login">
+	
 	<form action="/login" Method="POST" autocomplete="off">
-		<input name="username" class="userNameInput" type="text" maxlength="14"/>
-		<input type="submit" value="Enter">
+
+		<p class="name">
+			<input placeholder="What is your name?" name="username" type="text" class="input-name" id="name" required/>
+		</p>
+
+		<div class="submit">
+			<input type="submit" value="Enter" id="button-blue">
+			<div class="ease"></div>
+		</div>
 	</form>
 </div>
 {% endblock %}

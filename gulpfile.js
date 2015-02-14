@@ -37,17 +37,26 @@ gulp.task('compress-images', function() {
 });
 
 gulp.task('compress-javascript', function() {
-	gulp.src([paths.scripts.src + '*.js'])
+	gulp.src([paths.scripts.src + 'vendor/*.js', paths.scripts.src + 'main.js'])
+		.pipe(concat('main.js'))
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.scripts.dest))
 		.on('error',gutil.log)
 		.pipe(refresh());
+
+	gulp.src(paths.scripts.src + 'login.js')
+		.pipe(uglify())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest(paths.scripts.dest))
+		.on('error',gutil.log)
+		.pipe(refresh());		
 });
 
 gulp.task('less', function() {
 	gulp.src([	
-				paths.styles.src + 'pure.min.css',
+				paths.styles.src + 'vendor/pure.min.css',
+				paths.styles.src + 'vendor/*.css',
 				paths.styles.src + 'base.less',
 				paths.styles.src + '*.less'
 			])

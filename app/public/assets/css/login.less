@@ -1,22 +1,57 @@
-html {
-	background-image: url('../../images/min/bg-login.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	height: 100%;
-	
-	body {
-		background-color: transparent;
+/**** main text *****/
+h2 {
+	font-family: 'Poiret One', cursive;
+	letter-spacing: .1em;
+	line-height: 2em;
+	font-size: 2em;
+	font-weight: 500;
+	color: floralwhite;
+	padding: 0 1em;
+
+	.simple{
+		color: gold;
 	}
+	.lightweight {
+		color: lightskyblue;
+	}
+	.anonymous {
+		color: palegreen;
+	}
+}
+
+/*** Animations ****/
+
+//** Title (layout) **//
+h1{
+	-webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-duration: 1s;
+    animation-delay: .8s;
+  	-webkit-animation-delay: .8s;
+}
+//** Main text **//
+h2{
+	-webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-duration: 2s;
+  	animation-delay: 2s;
+  	-webkit-animation-delay: 2s;
+}
+
+.animated-button-login{
+	-webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-duration: 2s;
+  	animation-delay: 1s;
+  	-webkit-animation-delay: 1s;	
 }
 
 .login {
 	background-color:rgba(72,72,72,0.4);
+	display: none;
 	padding: 35px 50px;
 	width: 500px;
   	margin: 0 auto;
   	-moz-border-radius: 7px;
   	-webkit-border-radius: 7px;
+}
 
   	.input-name {
 	  	color:#3c3c3c;
@@ -52,8 +87,7 @@ html {
 		background-position: 11px 8px;
 		background-repeat: no-repeat;
 	}
-	#button-blue{
-		font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	.button-blue{
 		float:left;
 		width: 100%;
 		border: #fbfbfb solid 4px;
@@ -68,15 +102,19 @@ html {
 		transition: all 0.3s;
 		margin-top:-4px;
 		font-weight:700;
+		&:hover{
+			background-color: rgba(0,0,0,0);
+			color: #0493bd;
+		}	
 	}
 
-	#button-blue:hover{
-		background-color: rgba(0,0,0,0);
-		color: #0493bd;
-	}
 		
 	.submit:hover {
 		color: #3498db;
+		.ease{
+			width:100%;
+			background-color:white;
+		}
 	}
 		
 	.ease {
@@ -90,8 +128,3 @@ html {
 		transition: .3s ease;
 	}
 
-	.submit:hover .ease{
-	  width:100%;
-	  background-color:white;
-	}
-}

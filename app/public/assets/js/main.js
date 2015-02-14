@@ -2,11 +2,11 @@ $(document).on('ready', function() {
 	//initialize jquery objects
 	var $message = $('#m');
 	var socket = io();
-	var user = 'Me';
 
+	
 
-	//login 
-	$('.userNameInput').focus();
+	//***** wow animations | login  page*****//
+	//new WOW().init();
 
 	//send message from the client 
 	$('#send-messages-form').on('submit', function() {

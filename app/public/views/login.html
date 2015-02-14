@@ -1,18 +1,28 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="login">
-	
-	<form action="/login" Method="POST" autocomplete="off">
+<div  class="fadeInUp animated">
+	<h2 class="content-right"><span class="simple">Simple</span>, <span class="lightweight">lightweight</span> and <span class="anonymous">anonymous</span>. Meet and discuss ideas with people from all over the world.</h2>
+</div>
+<h2>Share on: facebook twitter</h2>
 
+<div class="text-center animated-button-login fadeIn animated">
+	<div class="button button-large">Enter</div>
+</div>
+
+<div class="login">
+	<form action="/login" Method="POST" autocomplete="off">
 		<p class="name">
 			<input placeholder="What is your name?" name="username" type="text" class="input-name" id="name" required/>
 		</p>
-
 		<div class="submit">
-			<input type="submit" value="Enter" id="button-blue">
+			<input type="submit" value="Join me" class="button-blue">
 			<div class="ease"></div>
 		</div>
 	</form>
 </div>
 {% endblock %}
+
+{% block scripts%}
+	<script type="text/javascript" src="js/min/login.min.js"></script>
+{% endblock%}

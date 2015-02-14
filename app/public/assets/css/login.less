@@ -1,3 +1,5 @@
+@import "variables";
+
 /**** main text *****/
 h2 {
 	font-family: 'Poiret One', cursive;
@@ -41,6 +43,32 @@ h2{
     animation-duration: 2s;
   	animation-delay: 1s;
   	-webkit-animation-delay: 1s;	
+}
+
+//***************** social font icons ***********************//
+.facebook-logo-big,.facebook-logo-big{}
+
+.logo {
+	&.facebook {
+		color: rgba(255,255,255,.3);
+		transition: 1s;
+		&:hover {
+			color: @facebook-color;
+		}
+	}
+	&.twitter {
+		color: rgba(255,255,255,.3);
+		transition: 1s;
+		&:hover {
+			color: @twitter-color;
+		}
+	}
+	&.big {
+		font-size: 5em;
+	}
+	&.small {
+		font-size: 2em;
+	}
 }
 
 .login {

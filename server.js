@@ -1,12 +1,13 @@
 var http		= require('http'),
-	express 	= require('express')
+	express 	= require('express'),
 	app 		= express(),
 	server 		= http.createServer(app),
 	bodyParser 	= require('body-parser'),
 	io 			= require('socket.io')(server),
 	swig 		= require('swig'),
 	session 	= require('express-session'),
-	cookieParser= require('cookie-parser');
+	cookieParser= require('cookie-parser'),
+	favicon 	= require('serve-favicon');
 
 var port = process.env.PORT || 3030;
 
@@ -24,6 +25,9 @@ app.use(express.static(__dirname + '/app/public/assets/'));
 //Models?
 var users = [];
 var newUserName;
+
+//set favicon
+app.use(favicon(__dirname + '/favicon.ico'));
 
 //middlewares
 app.use(cookieParser());

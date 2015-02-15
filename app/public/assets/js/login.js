@@ -15,6 +15,7 @@ $(document).on('ready', function(){
 			'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
 			, function(){
 				$('#enter-button').css('display','none');
+				$('#intro-text').removeClass('with-margin-bottom');
 				$login.addClass('animated fadeIn');
 				$login.show();
 				$('.input-name').focus();

@@ -2,11 +2,14 @@
 
 /// ----- Base -------///
 html {
-	background-image: url('../../images/min/bg.jpg');
-	background-repeat: no-repeat;
+	background-image: url(../../images/min/bg.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
-	background-position: center;
-	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
 	
 	body {
 		background-color: transparent;
@@ -55,11 +58,17 @@ html {
 //***********     /Helpers *******************//
 
 // Layout
+
+//****************** Title **********************//
 h1 {
 	font-family: 'Poiret One', cursive;
 	font-weight: bold;
 	letter-spacing: .1em;
 	color: white;
+	img {
+		vertical-align: middle;
+		width: 100px;
+	}
 }
 
 //common panel, use in chat messages and list of users

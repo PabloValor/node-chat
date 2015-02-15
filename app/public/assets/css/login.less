@@ -84,6 +84,7 @@ h2{
 	}
 }
 
+//********** Login form ***************//
 .login {
 	background-color:rgba(72,72,72,0.4);
 	display: none;
@@ -92,80 +93,37 @@ h2{
   	margin: 0 auto;
   	-moz-border-radius: 7px;
   	-webkit-border-radius: 7px;
-}
 
-  	.input-name {
-	  	color:#3c3c3c;
-		font-family: Helvetica, Arial, sans-serif;
-	  	font-weight:500;
-		font-size: 18px;
-		border-radius: 0;
-		line-height: 22px;
-		background-color: #fbfbfb;
-		padding: 13px 13px 13px 54px;
-		margin-bottom: 10px;
-		width:100%;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-	  	border: 3px solid rgba(0,0,0,0);
-
-	  	&:focus{
-			background: #fff;
-			box-shadow: 0;
-			border: 3px solid #3498db;
-			color: #3498db;
-			outline: none;
-		  padding: 13px 13px 13px 54px;
-		}
+  	input {
+  		font-family: inherit;
+  		font-weight: bold;
+  		outline: none;
+		letter-spacing: .1em;
   	}
 
-  	/* Icons ---------------------------------- */
-	#name{
-		background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-		background-size: 30px 30px;
-		background-position: 11px 8px;
-		background-repeat: no-repeat;
-	}
-	.button-blue{
-		float:left;
-		width: 100%;
-		border: #fbfbfb solid 4px;
-		cursor:pointer;
-		background-color: #3498db;
-		color:white;
-		font-size:24px;
-		padding-top:22px;
-		padding-bottom:22px;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		transition: all 0.3s;
-		margin-top:-4px;
-		font-weight:700;
-		&:hover{
-			background-color: rgba(0,0,0,0);
-			color: #0493bd;
-		}	
-	}
+  	.input-name {
+  		border: none;
+  		padding: .6em .8em;
+  		text-indent: 20px;
+  		transition: .6s;
+  		width: 67%;
+  		&:focus {
+  			border: 2px solid darkcyan;
+  			color: darkcyan;
+  		}
+  	}
+  	.submit-button {
+  	}
 
-		
-	.submit:hover {
-		color: #3498db;
-		.ease{
-			width:100%;
-			background-color:white;
-		}
-	}
-		
-	.ease {
-		width: 0px;
-		height: 73px;
-		background-color: #fbfbfb;
-		-webkit-transition: .3s ease;
-		-moz-transition: .3s ease;
-		-o-transition: .3s ease;
-		-ms-transition: .3s ease;
-		transition: .3s ease;
-	}
-
+  	.wrapper {
+  		position: relative;
+  	}
+  	.fa {
+  		position: absolute;
+  		&.fa-user {
+  			font-size: 1.4em;
+  			left: 75px;
+  			top: 8px;
+  		}
+  	}
+}

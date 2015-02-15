@@ -2,7 +2,7 @@ $(document).on('ready', function(){
 	//login form
 	$login = $('.login');
 
-	$('.button').on('click', function(){
+	$('#enter-button').on('click', function(){
 
 		//hide the 'Enter Button'
 		$(this).addClass('animated fadeOutUp');
@@ -10,7 +10,7 @@ $(document).on('ready', function(){
 		$(this).one(
 			'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
 			, function(){
-				$('.button').css('display','none');
+				$('#enter-button').css('display','none');
 				$login.addClass('animated fadeIn');
 				$login.show();
 				$('.input-name').focus();

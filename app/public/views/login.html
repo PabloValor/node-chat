@@ -6,20 +6,22 @@
 </div>
 
 <div class="text-center animated-button-login fadeIn animated">
-	<div class="button button-large">Enter</div>
+	<div class="button button-large" id="enter-button">Enter</div>
 </div>
 
-<div class="login">
+<!-- Login form -->
+<div class="login text-center">
 	<form action="/login" Method="POST" autocomplete="off">
-		<p class="name">
-			<input placeholder="What is your name?" name="username" type="text" class="input-name" id="name" required/>
+		<p class="wrapper">
+			<i class="fa fa-user"></i>
+			<input placeholder="what is your name?" name="username" type="text" class="input-name" id="name" maxlength="20" required/>
 		</p>
-		<div class="submit">
-			<input type="submit" value="Join me" class="button-blue">
-			<div class="ease"></div>
-		</div>
+		<p class="wrapper">
+			<input type="submit" value="Join" class="submit-button button button-large">
+		</p>
 	</form>
 </div>
+<!-- /Login form -->
 
 <!-- Social -->
 <div class="social animated fadeIn">

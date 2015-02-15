@@ -45,7 +45,8 @@ gulp.task('compress-javascript', function() {
 		.on('error',gutil.log)
 		.pipe(refresh());
 
-	gulp.src(paths.scripts.src + 'login.js')
+	gulp.src([paths.scripts.src + 'vendor/*.js', paths.scripts.src + 'login.js'])
+		.pipe(concat('login-app.js'))
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.scripts.dest))

@@ -1,6 +1,10 @@
 $(document).on('ready', function(){
 	//login form
-	$login = $('.login');
+	var $login = $('.login'),
+		$about = $('.who-i-am h2');
+
+	//initialize colorbox
+	$about.colorbox({html:"<p>Hi there, my name is Pablo and welcome to my chat</p>"});
 
 	$('#enter-button').on('click', function(){
 

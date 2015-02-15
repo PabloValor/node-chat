@@ -59,18 +59,25 @@ h2{
 
 //***************** social font icons ***********************//
 .logo {
+	color: rgba(255,255,255,.3);
+	transition: 1s;
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
 	&.facebook {
-		color: rgba(255,255,255,.3);
-		transition: 1s;
 		&:hover {
 			color: @facebook-color;
 		}
 	}
 	&.twitter {
-		color: rgba(255,255,255,.3);
-		transition: 1s;
 		&:hover {
 			color: @twitter-color;
+		}
+	}
+	&.googleplus {
+		&:hover {
+			color: @googleplus-color;
 		}
 	}
 	&.big {

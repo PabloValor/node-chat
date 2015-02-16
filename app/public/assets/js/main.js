@@ -2,12 +2,31 @@ $(document).on('ready', function() {
 	//initialize jquery objects
 	var $message = $('#m');
 	var socket = io();
+	var $scrollbar = $('section.mCustomScrollbar');
 	//var $textarea = $('textarea');
 
-	
+	//ititialize custom scrollbar
+	 $scrollbar.mCustomScrollbar({
+	 	autoDraggerLength: true,
+	 	autoExpandScrollbar: true,
+	 	scrollButtons: {
+        	enable: true
+    	},
+	 	advanced:{ 
+	 		updateOnContentResize: true,
+	 		updateOnImageLoad: true,
+	 		updateOnSelectorChange: "ul li"
+	 	},
+	 	callbacks:{
+			onSelectorChange:function(){
+		    	console.log("Scrollbars updated");
+		    }
+		}
+	 });
 
 	//***** wow animations | login  page*****//
 	//new WOW().init();
+
 	$message.focus();
 
 
@@ -39,6 +58,9 @@ $(document).on('ready', function() {
 		$('#messages').append($('<li>')
 							.text(data.username + ': '+ data.msg)
 							.addClass('animated fadeInUp message'));
+
+		//update the scroll
+		$scrollbar.mCustomScrollbar("update");
 	});
 
 	//show message when new user is online

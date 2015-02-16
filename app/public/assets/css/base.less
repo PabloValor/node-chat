@@ -1,6 +1,9 @@
 @import "variables";
 
 /// ----- Base -------///
+input, div, textarea {
+	box-sizing: border-box;
+}
 html {
 	background-image: url(../../images/min/bg.jpg);
 	-webkit-background-size: cover;
@@ -10,10 +13,10 @@ html {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
+	font-family: 'Poiret One', cursive;
 	
 	body {
 		background-color: transparent;
-		font-family: 'Poiret One', cursive;
 		font-size: 20px;
 	}
 }
@@ -73,9 +76,7 @@ h1 {
 
 //common panel, use in chat messages and list of users
 .common-panel {
-	background: rgba(0,0,0,.1);
-	border-radius: .4em;
-	max-height: 550px;
+	background: rgba(213, 145, 233, 0.15);
 	padding: .7em;
 	overflow-y: scroll;	
 }

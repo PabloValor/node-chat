@@ -10,11 +10,17 @@
 			<form id="send-messages-form" action="" autocomplete="off">
 					<div class="pure-g">
 						<div class="pure-u-4-5">
-							<input type="text" id="m" placeholder="Share something..." class="form-input" id="name" required>
+							<div class="wrapper textarea">
+								<i class="fa fa-quote-left"></i>
+								<textarea id="m" rows="3" placeholder="Say something..." class="form-input" required></textarea>	
+							</div>
 						</div>
 						<div class="pure-u-1-5">
-							<input type="submit" value="SEND" class="button-blue send-message-button"/>
-							<div class="ease"></div>	
+							<div class="wrapper submit">
+								<i class="fa fa-paper-plane-o"></i>
+								<input type="submit" value="SEND" class="send-message-button button"/>
+								<!--<div id="send-message-button" class="send-message-button">Send</div>-->
+							</div>
 						</div>
 					</div>
 			</form>

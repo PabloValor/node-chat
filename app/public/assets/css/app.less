@@ -1,27 +1,98 @@
+@import 'variables';
+
 // chat section
 .main-container {
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: .1em;
 	margin: 0 2em;
 }
 
 section {
+	border: 1px solid white;
 	#messages {
+		height: 550px;
+		padding-left: 0;
 		list-style: none;
+		li {
+			background: rgba(255, 255, 255, 0.77);
+			padding: .5em 1em;
+			.fa {
+				font-size: 1.2em;
+				margin-right: .7em;
+			}
+			&.message {
+			
+			}
+			&.new-user{
+				color: @new-user-online;
+			}
+			&.user-offline{
+				color: @user-offline;
+			}
+		}
+		
+	}
+}
+
+//send messages form
+#send-messages-form {
+	textarea, input {
+		font-family: 'Raleway', sans-serif;
+		letter-spacing: .1em;
+		&:focus {
+			outline: 0;
+		}
+	}
+	textarea {
+		text-indent: 40px;
+		resize: none;
+		width: 96%;
+		&:focus {
+			border: 1px solid darkturquoise;
+		}
+	}
+	.send-message-button {
+		height: 78px;
+		width: 100%;
+	}
+	.wrapper {
+		position: relative;
+		.fa {
+			position: absolute;
+		}
+
+		&.textarea {
+			.fa {
+				font-size: 1.1em;
+				top: 5px;
+				left: 11px;
+			}
+		}
+		&.submit {
+			input {
+				text-indent: 30px;
+			}
+			&:hover {
+				.fa {
+					color: white;
+				}
+			}
+			.fa {
+				color: darkturquoise;
+				top: 18px;
+				font-size: 32px;
+				left: 8px;
+			}
+		}
 	}
 }
 
 //aside section
 .users {
+	border: 1px solid white;
+	color: white;
+	font-family: 'Poiret One', cursive;
+	letter-spacing: .1em;
 	margin-right: 1em;
 	overflow: hidden;
-}
-
-.send-message-button {
-	width: 90%!important;
-	margin-left: 10%;
-	margin-top: 0!important;
-	font-size: 1em !important;
-	padding-bottom: 10px !important;
-	padding-top: 10px !important;
-	margin-top: 0 !important;
-	height: 62px;
 }

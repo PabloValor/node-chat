@@ -96,3 +96,92 @@ h1 {
 		color: white;
 	}
 }
+//********* who I am ******************//
+.who-i-am h2 {
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+//***************** social font icons ***********************//
+.logo {
+	&.light {
+		color: rgba(255,255,255,.4);
+	}
+	&.dark {
+		color: rgba(0,0,0,.4);
+	}
+	transition: 1s;
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	&.facebook {
+		&:hover {
+			color: @facebook-color;
+		}
+	}
+	&.twitter {
+		&:hover {
+			color: @twitter-color;
+		}
+	}
+	&.googleplus {
+		&:hover {
+			color: @googleplus-color;
+		}
+	}
+	&.linkedin {
+		&:hover {
+			color: @linkedin-color;
+		}
+	}
+	&.skype {
+		&:hover {
+			color: @skype-color;
+		}
+	}
+	&.gmail {
+		&:hover {
+			color: @gmail-color;
+		}
+	}
+	&.big {
+		font-size: 5em;
+	}
+	&.small {
+		font-size: 2em;
+	}
+	&.icon-spacing {
+		margin-right: .2em;
+	}
+}
+
+.about-me {
+	font-family: 'Raleway', sans-serif;
+	margin: 1em;
+	letter-spacing: .1em;
+	h3 {
+		border-bottom: 2px solid darksalmon;
+		padding-bottom: .4em;
+	}
+	p {
+		color: black;
+		.text-line-through {
+			text-decoration: line-through;
+		}
+	}
+	._img-wrapper {
+		a {
+			text-decoration: none;
+		}
+		img {
+			height: 200px;
+			border: 2px solid darksalmon;
+			border-radius: 50%;
+			padding: 1em;
+			width: 200px;
+		}
+	}
+}

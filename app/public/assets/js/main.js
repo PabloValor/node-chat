@@ -6,23 +6,25 @@ $(document).on('ready', function() {
 	//var $textarea = $('textarea');
 
 	//ititialize custom scrollbar
-	 $scrollbar.mCustomScrollbar({
-	 	autoDraggerLength: true,
+	$scrollbar.mCustomScrollbar({
+		autoDraggerLength: true,
 	 	autoExpandScrollbar: true,
 	 	scrollButtons: {
         	enable: true
     	},
 	 	advanced:{ 
 	 		updateOnContentResize: true,
-	 		updateOnImageLoad: true,
-	 		updateOnSelectorChange: "ul li"
-	 	},
-	 	callbacks:{
-			onSelectorChange:function(){
-		    	console.log("Scrollbars updated");
-		    }
-		}
-	 });
+	 		updateOnImageLoad: true
+	 	}
+
+	});
+
+	//autoscroll when data is added FIX THIS!!!!
+	function updateScroll() {
+		$scrollbar.animate({
+			scrollTop: $('#messages')[0].scrollHeight
+		}, 900);
+	}
 
 	//***** wow animations | login  page*****//
 	//new WOW().init();
@@ -58,9 +60,9 @@ $(document).on('ready', function() {
 		$('#messages').append($('<li>')
 							.text(data.username + ': '+ data.msg)
 							.addClass('animated fadeInUp message'));
-
+		//COMPLETE THIS !!
 		//update the scroll
-		$scrollbar.mCustomScrollbar("update");
+		//updateScroll();
 	});
 
 	//show message when new user is online

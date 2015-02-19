@@ -162,9 +162,34 @@ h1 {
 	font-family: 'Raleway', sans-serif;
 	margin: 1em;
 	letter-spacing: .1em;
+	._content {
+		background: #EDEDED;
+		padding: .2em .7em;
+		._body {
+			margin-top: 2em;
+		}
+	}
 	h3 {
-		border-bottom: 2px solid darksalmon;
 		padding-bottom: .4em;
+		position: relative;
+		._badge {
+			background: darksalmon;
+			box-shadow: 0 2px 3px #8D8D8D;
+			position: absolute;
+			left: -33px;
+			padding: .3em .5em;
+			&:after {
+				content: ' ';
+				position: absolute;
+				width: 0;
+				height: 0;
+				left: 0px;
+				top: 100%;
+				border-width: 5px 10px;
+				border-style: solid;
+				border-color: #727272 #727272 transparent transparent;
+			}
+		}
 	}
 	p {
 		color: black;

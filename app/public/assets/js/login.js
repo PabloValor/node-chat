@@ -7,7 +7,7 @@ $(document).on('ready', function(){
 		'<div class="about-me">
 			<header class="text-center">
 				<div class="_img-wrapper animated fadeInUp">
-					<img src="images/min/space-ghost.jpg" alt="Pablo Valor Avatar">	
+					<img src="images/min/avatar.jpg" alt="Pablo Valor Avatar">	
 				</div>
 			</header>
 			<div class="_content">

@@ -2,7 +2,13 @@
 
 {% block content %}
 <div class="pure-g">
-	<div class="pure-u-4-5">
+	<div class="pure-u-1 pure-u-md-1-5">
+		<aside class="users common-panel text-center">
+			<i class="fa fa-users"></i>
+			<span id="usersCount"></span>
+		</aside>
+	</div>
+	<div class="pure-u-1 pure-u-md-4-5">
 		<div class="main-container">
 
 			<section class="add-margin-bottom mCustomScrollbar" data-mcs-axis="y" data-mcs-theme="rounded-dots">
@@ -11,7 +17,7 @@
 
 			<form id="send-messages-form" action="" autocomplete="off">
 					<div class="pure-g">
-						<div class="pure-u-4-5">
+						<div class="pure-u-1 pure-u-sm-4-5">
 							<div class="wrapper textarea">
 								<i class="fa fa-quote-left"></i>
 								<textarea id="m" rows="3" placeholder="Say something..." class="form-input" required></textarea>	
@@ -19,18 +25,12 @@
 						</div>
 						<div class="pure-u-1-5">
 							<div class="wrapper submit">
-								<i class="fa fa-paper-plane-o"></i>
 								<input type="submit" value="SEND" class="send-message-button button"/>
 							</div>
 						</div>
 					</div>
 			</form>
 		</div>
-	</div>
-	<div class="pure-u-1-5">
-		<aside class="users common-panel">
-			<span id="usersCount"></span>
-		</aside>
 	</div>
 </div>
 {% endblock %}

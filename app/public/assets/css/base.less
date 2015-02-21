@@ -166,7 +166,7 @@ h1 {
 		background: #EDEDED;
 		padding: .2em .7em;
 		._body {
-			margin-top: 2em;
+			margin: 2.5em .3em .3em;
 		}
 	}
 	h3 {
@@ -198,6 +198,13 @@ h1 {
 		}
 	}
 	._img-wrapper {
+		._animation-icon-container { // Use it only for animations
+			display: inline-block;
+			-webkit-animation-duration: 1.5s; /* Chrome, Safari, Opera */
+    		animation-duration: 1.5s;
+  			animation-delay: 1s;
+  			-webkit-animation-delay: 1s;
+		}
 		a {
 			text-decoration: none;
 		}

@@ -90,6 +90,6 @@ $(document).on('ready', function() {
 	});
 
 	socket.on('users counter', function(data) {
-		$('#usersCount').html('Online: ' + data.usersCount + ' Users');
+		$('#usersCount').html('Online: ' + '<strong>' + data.usersCount + '</strong>' + ' Users');
 	});
 });

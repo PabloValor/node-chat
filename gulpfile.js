@@ -57,9 +57,11 @@ gulp.task('compress-javascript', function() {
 gulp.task('less', function() {
 	gulp.src([	
 				paths.styles.src + 'vendor/pure.min.css',
+				paths.styles.src + 'vendor/grids-responsive-min.css',
 				paths.styles.src + 'vendor/*.css',
 				paths.styles.src + 'base.less',
-				paths.styles.src + '*.less'
+				paths.styles.src + '*.less',
+				paths.styles.src + 'media-queries.less'
 			])
 		.pipe(less())
 		.on('error', gutil.log)

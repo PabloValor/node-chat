@@ -17,11 +17,11 @@ $(document).on('ready', function(){
 					</h3>
 				</div>
 				<div class="_body">
-					<p class="left-content">
+					<p>
 						Hi there! My name is Pablo and I am from Buenos Aires, Argentina. I am a  
 						<span class="text-line-through">web developer</span> good pizza maker and I love discover and use new technologies.
 					</p>
-					<p class="left-content">
+					<p>
 						So I hope you enjoy this chat. There is a lot of work there but It was worth \'cause I could learned a lot of sweeeet things!
 					</p>
 					<p>
@@ -34,17 +34,23 @@ $(document).on('ready', function(){
 					</h3>
 				</div>
 				<div class="_img-wrapper _body text-center">
-					<span class="symbol logo dark gmail big icon-spacing">
-						<a href="mailto:pablovalor89@gmail.com" target="_blank" title="E-mail">circleemail</a>
-					</span>
+					<div class="_animation-icon-container animated fadeInLeft">
+						<span class="symbol logo dark gmail big icon-spacing">
+							<a href="mailto:pablovalor89@gmail.com" target="_blank" title="E-mail">circleemail</a>
+						</span>
+					</div>
 					
-					<span class="symbol logo dark skype big icon-spacing">
-						<a href="skype:pablo.valor77?chat" target="_blank" title="Skype">circleskype</a>
-					</span>
+					<div class="_animation-icon-container animated fadeInUp">
+						<span class="symbol logo dark skype big icon-spacing">
+							<a href="skype:pablo.valor77?chat" target="_blank" title="Skype">circleskype</a>
+						</span>
+					</div>
 					
-					<span class="symbol logo dark linkedin big">
-						<a href="http://ar.linkedin.com/pub/pablo-alejandro-valor/7a/521/565" target="_blank" title="Linkedin">circlelinkedin</a>
-					</span>
+					<div class="_animation-icon-container animated fadeInRight">
+						<span class="symbol logo dark linkedin big icon-spacing">
+							<a href="http://ar.linkedin.com/pub/pablo-alejandro-valor/7a/521/565" target="_blank" title="Linkedin">circlelinkedin</a>
+						</span>
+					</div>
 				</div>	
 			</div>
 		</div>',

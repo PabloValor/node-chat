@@ -1,5 +1,5 @@
 $(window).on('load', function(){
-	$('#loader-wrapper').fadeOut(1400);
+	$('#loader-wrapper').fadeOut(1000);
 });
 $(document).on('ready', function(){
 	//login form

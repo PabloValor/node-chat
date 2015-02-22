@@ -1,5 +1,5 @@
 $(window).on('load', function(){
-	$('#loader-wrapper').fadeOut(1700);
+	$('#loader-wrapper').fadeOut(1000);
 });
 $(document).on('ready', function() {
 	//initialize jquery objects

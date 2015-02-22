@@ -1,3 +1,6 @@
+$(window).on('load', function(){
+	$('#loader-wrapper').fadeOut(1700);
+});
 $(document).on('ready', function() {
 	//initialize jquery objects
 	var $message = $('#m');

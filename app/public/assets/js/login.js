@@ -1,3 +1,6 @@
+$(window).on('load', function(){
+	$('#loader-wrapper').fadeOut(1700);
+});
 $(document).on('ready', function(){
 	//login form
 	var $login = $('.login');
@@ -78,3 +81,4 @@ $(document).on('ready', function(){
 			});
 	});
 });
+

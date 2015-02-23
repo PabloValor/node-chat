@@ -56,15 +56,11 @@ gulp.task('compress-javascript', function() {
 });
 
 gulp.task('less', function() {
-	gulp.src([	
-				paths.styles.src + 'vendor/pure.min.css',
-				paths.styles.src + 'vendor/grids-responsive-min.css',
-				paths.styles.src + 'vendor/*.css',
-				paths.styles.src + 'base.less',
-				paths.styles.src + '*.less',
-				paths.styles.src + 'media-queries.less'
-			])
-		.pipe(less())
+	gulp.src(paths.styles.src + 'main.less')
+		.pipe(less({
+			paths: './app/public/assets/css/',
+			filename: 'main.less'
+			}))
 		.on('error', gutil.log)
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'IE 8', 'IE 9', 'last 5 versions', 'Firefox 14', 'Opera 11.1'],
@@ -72,7 +68,6 @@ gulp.task('less', function() {
         	}
         ))		
 		.pipe(minifyCSS({keepSpecialComments: 0}))
-		.pipe(concat('main.css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.styles.dest))
 		.pipe(refresh());

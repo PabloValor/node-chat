@@ -108,7 +108,7 @@ h1 {
 //***************** social font icons ***********************//
 .logo {
 	&.light {
-		color: rgba(255,255,255,.4);
+		color: rgba(255,255,255,.7);
 	}
 	&.dark {
 		color: rgba(0,0,0,.4);
@@ -164,7 +164,7 @@ h1 {
 	margin: 1em;
 	letter-spacing: .1em;
 	._content {
-		background: #EDEDED;
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(135,26,145,1)), color-stop(100%,rgba(63,178,193,1)));
 		padding: .2em .7em;
 		._body {
 			margin: 2.5em .3em .3em;
@@ -174,8 +174,9 @@ h1 {
 		padding-bottom: .4em;
 		position: relative;
 		._badge {
-			background: darksalmon;
-			box-shadow: 0 2px 3px #8D8D8D;
+			background: slateblue;
+			box-shadow: 0 2px 3px black;
+			color: white;
 			position: absolute;
 			left: -33px;
 			padding: .3em .5em;
@@ -188,12 +189,13 @@ h1 {
 				top: 100%;
 				border-width: 5px 10px;
 				border-style: solid;
-				border-color: #727272 #727272 transparent transparent;
+				border-color: black black transparent transparent;
 			}
 		}
 	}
 	p {
-		color: black;
+		color: white;
+		line-height: 1.5em;
 		.text-line-through {
 			text-decoration: line-through;
 		}
@@ -211,7 +213,7 @@ h1 {
 		}
 		img {
 			height: 200px;
-			border: 2px solid darksalmon;
+			border: 2px solid slateblue;
 			border-radius: 50%;
 			padding: 1em;
 			width: 200px;

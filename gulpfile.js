@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	imagemin = require('gulp-imagemin'),
-	minifyCSS = require('gulp-minify-css');
+	minifyCSS = require('gulp-minify-css'),
+	autoprefixer = require('gulp-autoprefixer');
 
 var basePaths = {
 	src: './app/public/assets/',
@@ -65,6 +66,11 @@ gulp.task('less', function() {
 			])
 		.pipe(less())
 		.on('error', gutil.log)
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'IE 8', 'IE 9', 'last 5 versions', 'Firefox 14', 'Opera 11.1'],
+            cascade: false
+        	}
+        ))		
 		.pipe(minifyCSS({keepSpecialComments: 0}))
 		.pipe(concat('main.css'))
 		.pipe(rename({suffix: '.min'}))

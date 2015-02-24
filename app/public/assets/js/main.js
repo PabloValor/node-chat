@@ -52,7 +52,7 @@ $(document).on('ready', function() {
 	socket.on('chat message', function(data){
 		$('#messages').append($('<li>')
 							.text(data.username + ': '+ data.msg)
-							.addClass('animated fadeInUp message'));
+							.addClass('animated fadeInUp message '));
 		updateScrollBar();
 	});
 

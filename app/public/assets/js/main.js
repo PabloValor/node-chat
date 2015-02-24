@@ -15,6 +15,7 @@ $(document).on('ready', function() {
     	}
 	});
 
+	//update ScrollBar
 	function updateScrollBar() {
 		$scrollbar.mCustomScrollbar('scrollTo','-=90', {
 			scrollEasing:"easeOut",
@@ -23,6 +24,19 @@ $(document).on('ready', function() {
 	}
 
 	$message.focus();
+
+	//if user click the logo, back to the home
+	$('#logo').on('click', function(event) {
+
+		event.preventDefault();
+		
+		if(confirm("Are sure want to go Home?")) {
+			alert("go home");
+		}
+		else {
+			alert('stay in chat');
+		}
+	})
 
 
 	//submit the textarea content when press Enter

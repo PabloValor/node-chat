@@ -10,27 +10,17 @@ $(document).on('ready', function() {
 
 	//ititialize custom scrollbar
 	$scrollbar.mCustomScrollbar({
-		autoDraggerLength: true,
-	 	autoExpandScrollbar: true,
 	 	scrollButtons: {
         	enable: true
-    	},
-	 	advanced:{ 
-	 		updateOnContentResize: true,
-	 		updateOnImageLoad: true
-	 	}
-
+    	}
 	});
 
-	//autoscroll when data is added FIX THIS!!!!
-	function updateScroll() {
-		$scrollbar.animate({
-			scrollTop: $('#messages')[0].scrollHeight
-		}, 900);
+	function updateScrollBar() {
+		$scrollbar.mCustomScrollbar('scrollTo','-=90', {
+			scrollEasing:"easeOut",
+			scrollInertia: 600
+		});
 	}
-
-	//***** wow animations | login  page*****//
-	//new WOW().init();
 
 	$message.focus();
 
@@ -63,9 +53,7 @@ $(document).on('ready', function() {
 		$('#messages').append($('<li>')
 							.text(data.username + ': '+ data.msg)
 							.addClass('animated fadeInUp message'));
-		//COMPLETE THIS !!
-		//update the scroll
-		//updateScroll();
+		updateScrollBar();
 	});
 
 	//show message when new user is online
@@ -78,6 +66,7 @@ $(document).on('ready', function() {
 		element.prepend($('<i>').addClass('fa fa-user-plus'));
 
 		$('#messages').append(element);
+		updateScrollBar();
 	});
 
 	//show message when an user left the chat
@@ -90,6 +79,7 @@ $(document).on('ready', function() {
 		element.prepend($('<i>').addClass('fa fa-user-times'));
 
 		$('#messages').append(element);
+		updateScrollBar();
 	});
 
 	socket.on('users counter', function(data) {

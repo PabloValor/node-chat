@@ -163,11 +163,54 @@ h1 {
 	font-family: 'Raleway', sans-serif;
 	margin: 1em;
 	letter-spacing: .1em;
+	header {
+		height: 250px;
+		position: relative;
+		._ribbon {
+			height: 84px;
+			background: #6a5acd;
+			position: absolute;
+			width: 100%;
+			top: 34%;
+			&:before {
+				border-left: 25px solid white;
+				border-bottom: transparent 42px solid;
+				border-top: 42px solid transparent;
+				top: 14px;
+				left: 6px;
+				content: "";
+				display: block;
+				height: 0;
+				width: 0;
+			}
+			&:after {
+				border-left: 25px solid white;
+				border-bottom: transparent 42px solid;
+				border-top: 42px solid transparent;
+				top: 14px;
+				left: 6px;
+				content: "";
+				display: block;
+				height: 0;
+				width: 0;
+			}
+		}
+		._avatar {
+			position: absolute;
+			left: 34%;
+		}
+	}
 	._content {
 		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(135,26,145,1)), color-stop(100%,rgba(63,178,193,1)));
 		padding: .2em .7em;
 		._body {
 			margin: 2.5em .3em .3em;
+			.little-buddha {
+				float: left;
+				border-radius: 50%;
+				width: 82px;
+				margin-right: 1em;
+			}
 		}
 	}
 	h3 {
@@ -212,6 +255,8 @@ h1 {
 			text-decoration: none;
 		}
 		img {
+			top: 0;
+			left: 3%;
 			height: 200px;
 			border: 2px solid slateblue;
 			border-radius: 50%;

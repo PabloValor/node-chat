@@ -9,7 +9,8 @@ $(document).on('ready', function(){
 	$('.who-i-am').colorbox({html: 
 		'<div class="about-me">
 			<header class="text-center">
-				<div class="_img-wrapper animated fadeInUp">
+				<div class="_ribbon"></div>
+				<div class="_avatar _img-wrapper animated fadeInUp">
 					<img src="images/min/avatar.jpg" alt="Pablo Valor Avatar">	
 				</div>
 			</header>
@@ -21,6 +22,7 @@ $(document).on('ready', function(){
 				</div>
 				<div class="_body">
 					<p>
+						<img class="little-buddha" src="images/min/buddha-cartoon.jpg" alt="buddha cartoon image"/>
 						Hi there! My name is Pablo and I am from Buenos Aires, Argentina. I am a  
 						<span class="text-line-through">web developer</span> good pizza maker and I love discover and use new technologies.
 					</p>

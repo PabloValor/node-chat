@@ -5,8 +5,11 @@ input, div, textarea {
 	box-sizing: border-box;
 }
 html {
+		/* Webkit */
 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(135,26,145,.4)), color-stop(100%,rgba(63,178,193,.4))),
 				url(../../images/min/bg.jpg);
+		/* Moz 	*/
+	background-image: -moz-linear-gradient(-45deg,  rgba(135,26,145,.4) 0%, rgba(63,178,193,.4) 100%), url(../../images/min/bg.jpg); /* FF3.6+ */
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -206,6 +209,7 @@ h1 {
 	}
 	._content {
 		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(135,26,145,1)), color-stop(100%,rgba(63,178,193,1)));
+		background-image: -moz-linear-gradient(-45deg,  rgba(135,26,145,1) 0%, rgba(63,178,193,1) 100%);
 		padding: .2em .7em;
 		._body {
 			margin: 2.5em .3em .3em;

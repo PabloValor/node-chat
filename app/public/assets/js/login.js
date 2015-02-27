@@ -24,13 +24,13 @@ $(document).on('ready', function(){
 					<p>
 						<img class="little-buddha" src="images/min/buddha-cartoon.jpg" alt="buddha cartoon image"/>
 						Hi there! My name is Pablo and I am from Buenos Aires, Argentina. I am a  
-						<span class="text-line-through">web developer</span> good pizza maker and I love discover and use new technologies.
+						<span class="text-line-through">web developer</span> good pizza maker and I love discovering and using new technologies.
 					</p>
 					<p>
-						So I hope you enjoy this chat. There is a lot of work there but It was worth \'cause I could learned a lot of sweeeet things!
+						I really hope you enjoy this chat. It meant hard work but worth the effort because I was able to learn many sweeeet things!
 					</p>
 					<p>
-						Feel free to give me some feedback if you have any question, idea, proyect or whatever.
+						Feel free to give me some feedback if you have any question, idea, project or whatever.
 					</p>
 				</div>
 				<div class="left-content">

@@ -29,7 +29,7 @@ $(document).on('ready', function() {
 
 	//if user click the logo, back to the home
 	$('#logo').on('click', function(event) {
-
+		//Setup sweetAlert Jquery plugin 
 		event.preventDefault();
 		swal({
 			title: 'Do you want go out?',
@@ -43,7 +43,7 @@ $(document).on('ready', function() {
 		},
 		function(isConfirm){
 			if(isConfirm) {
-				swal({title: 'See you :D',
+				swal({title: 'See you later',
 					type: 'success'
 				},
 				function(isConfirm) {
@@ -56,11 +56,6 @@ $(document).on('ready', function() {
 				 swal("Cancelled", "Continue chatting!", "error");
 			}
 		});
-		
-		/*if(confirm("Are sure want to go Home?")) {
-			socket.emit('logout', {});
-			window.location = "/login";
-		}*/
 	});
 
 

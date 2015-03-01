@@ -23,18 +23,45 @@ $(document).on('ready', function() {
 		});
 	}
 
+	//get the focus, ready to write 
 	$message.focus();
+
 
 	//if user click the logo, back to the home
 	$('#logo').on('click', function(event) {
 
 		event.preventDefault();
+		swal({
+			title: 'Do you want go out?',
+			text: 'You will be redirect to login page',
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			confirmButtonText: "Sure!",
+			closeOnConfirm: false,
+			closeOnCancel: false
+		},
+		function(isConfirm){
+			if(isConfirm) {
+				swal({title: 'See you :D',
+					type: 'success'
+				},
+				function(isConfirm) {
+					socket.emit('logout', {});
+					window.location = "/login";					
+				}
+				);
+
+			} else {
+				 swal("Cancelled", "Continue chatting!", "error");
+			}
+		});
 		
-		if(confirm("Are sure want to go Home?")) {
+		/*if(confirm("Are sure want to go Home?")) {
 			socket.emit('logout', {});
 			window.location = "/login";
-		}
-	})
+		}*/
+	});
 
 
 	//submit the textarea content when press Enter

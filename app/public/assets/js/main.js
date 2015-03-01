@@ -31,10 +31,8 @@ $(document).on('ready', function() {
 		event.preventDefault();
 		
 		if(confirm("Are sure want to go Home?")) {
-			alert("go home");
-		}
-		else {
-			alert('stay in chat');
+			socket.emit('logout', {});
+			window.location = "/login";
 		}
 	})
 

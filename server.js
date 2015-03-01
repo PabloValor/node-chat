@@ -111,9 +111,19 @@ io.on('connection', function(socket){
 	socket.on('disconnect', function(){
 		removeInArray(users, socket.session.username);
 
-		io.sockets.emit('user offline',{username: socket.session.username});
+		// prevent exec this if user clicked before 'logout'
+		if(socket.session.username != undefined) {
+			io.sockets.emit('user offline',{username: socket.session.username});
+		}
 		io.sockets.emit('users counter', {usersCount: users.length});
-	});		
+	});
+
+	socket.on('logout', function() {
+		io.sockets.emit('user offline',{username: socket.session.username});
+		removeInArray(users, socket.session.username);
+		socketSession.clear(socket); //destroy the session
+		//socket.request.redirect('/login');
+	})		
 });
 
 server.listen(port, function(){

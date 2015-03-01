@@ -9,7 +9,8 @@ var http			= require('http'),
 	FirebaseStore 	= require('connect-firebase')(session),
 	socketIOSession	= require('socket.io.session'),
 	cookieParser 	= require('cookie-parser'),
-	favicon 		= require('serve-favicon');
+	favicon 		= require('serve-favicon'),
+	_ 				= require('underscore');
 
 var port = process.env.PORT || 3030;
 
@@ -122,9 +123,5 @@ server.listen(port, function(){
 
 //remove user from the User array
  function removeInArray(arr, item) {
-      for(var i = arr.length; i--;) {
-          if(arr[i] === item) {
-              arr.splice(i, 1);
-          }
-      }
+     users = _.without(arr, _.findWhere(arr, item));
   }

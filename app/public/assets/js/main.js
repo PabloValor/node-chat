@@ -17,7 +17,7 @@ $(document).on('ready', function() {
 
 	//update ScrollBar
 	function updateScrollBar() {
-		$scrollbar.mCustomScrollbar('scrollTo','-=90', {
+		$scrollbar.mCustomScrollbar('scrollTo','-=99999', {
 			scrollEasing:"easeOut",
 			scrollInertia: 600
 		});

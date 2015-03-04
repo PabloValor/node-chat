@@ -8,6 +8,7 @@
 }
 
 section {
+	background: rgba(255, 255, 255, .4);
 	overflow: hidden;
 	height: 400px;
 	border: 1px solid white;
@@ -17,16 +18,42 @@ section {
 		padding-left: 0;
 		list-style: none;
 		li {
-			background: rgba(255, 255, 255, 0.77);
 			padding: .5em 1em;
 			.fa {
 				font-size: 1.2em;
 				margin-right: .7em;
 			}
-			&.message {
-			
+			.user, .message {
+				padding: .5em;
+			}
+			.user {
+				display: inline-block;
+				float: left;
+				text-align: center;
+				.time {
+					font-size: .7em;
+					font-weight: bold;
+				}
+			}
+			.message {
+				background: rgba(86, 79, 233, 0.79);
+				color: white;
+				display: inline-block;
+				position: relative;
+				min-height: 62px;
+				letter-spacing: .2em;
+				.arrow-left {
+					border-bottom: 17px solid transparent; 
+					border-right:10px solid rgba(86, 79, 233, .79);
+					height: 0; 
+					position: absolute;
+					left: -.5em;
+					top: 1em;
+					width: 0;
+				}
 			}
 			&.new-user{
+				background: red;
 				color: @new-user-online;
 			}
 			&.user-offline{

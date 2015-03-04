@@ -84,9 +84,25 @@ $(document).on('ready', function() {
 
 	//recive client message from the server and show it on browser
 	socket.on('chat message', function(data){
-		$('#messages').append($('<li>')
-							.text(data.username + ': '+ data.msg)
-							.addClass('animated fadeInUp message '));
+
+		var getCurrentTime = function() {
+			var date = new Date();
+			return date.getHours() + ":" + date.getMinutes();
+		}
+
+		$('#messages').append(
+			'<li class="animated fadeInUp pure-g">'+ 
+				'<div class="user pure-u-1 pure-u-md-1-5">'+
+					data.username +
+					'<div class="time"> ['+ getCurrentTime() +']</div>'+
+				'</div>'+
+				'<div class="message pure-u-1 pure-u-md-4-5">'+ 
+					'<div class="arrow-left"></div>'+
+					data.msg +
+				'</div>'+ 	
+			'</li>'
+		);
+
 		updateScrollBar();
 	});
 

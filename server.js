@@ -25,8 +25,11 @@ app.set('views', __dirname + '/app/public/views/');
 //set static files
 app.use(express.static(__dirname + '/app/public/assets/'));
 
-//Current users collection
-var users = [];
+//Current users collection 
+/** FOR NOW I WILL ONLY USE A INTEGER COUNTER BUT THE IDEA IS HAVE 
+	A COLLECTION OF USERNAMES TO DISPLAY THEM SOMEWHERE IN THEM APP **/
+//var users = [];
+var users = 0;
 
 //set favicon
 app.use(favicon(__dirname + '/favicon.ico'));
@@ -81,13 +84,13 @@ app.get('/login', isLogged, function(req, res){
 });
 
 app.post('/login', function(req, res){
-	users.push(req.body.username);
+	//users.push(req.body.username);
 	req.session.username = req.body.username;
 	res.redirect('/');
 });
 
 app.get('/', isnotLogged , function(req, res){
-	users.push(req.body.username);
+	//users.push(req.body.username);
 	res.render('chat',{});
 });
 
@@ -99,28 +102,31 @@ io.use(socketSession.parser);
 
 io.on('connection', function(socket){
 
-	io.sockets.emit('users counter', {usersCount: users.length});
+	users++;
+
+	io.sockets.emit('users counter', {usersCount: users});
 
 	socket.on('chat message', function(msg){
 		io.emit('chat message', {msg: msg, username: socket.session.username});
 	});
 
-	io.sockets.emit('users counter', {usersCount: users.length});
 	io.sockets.emit('show newUser', {username: socket.session.username});
 
 	socket.on('disconnect', function(){
-		removeInArray(users, socket.session.username);
+		//removeInArray(users, socket.session.username);
+		users--;
 
 		// prevent exec this if user clicked before 'logout'
 		if(socket.session.username != undefined) {
 			io.sockets.emit('user offline',{username: socket.session.username});
 		}
-		io.sockets.emit('users counter', {usersCount: users.length});
+		io.sockets.emit('users counter', {usersCount: users});
 	});
 
 	socket.on('logout', function() {
 		io.sockets.emit('user offline',{username: socket.session.username});
-		removeInArray(users, socket.session.username);
+		//removeInArray(users, socket.session.username);
+		
 		socketSession.clear(socket); //destroy the session
 		//socket.request.redirect('/login');
 	})		
@@ -131,7 +137,9 @@ server.listen(port, function(){
 });
 
 
-//remove user from the User array
+//remove user from the User array 	TEMPORALLY DISABLED
+/*
  function removeInArray(arr, item) {
      users = _.without(arr, _.findWhere(arr, item));
   }
+ */

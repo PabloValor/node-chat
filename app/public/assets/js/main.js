@@ -7,12 +7,6 @@ $(document).on('ready', function() {
 	var socket = io();
 	var $scrollbar = $('section.mCustomScrollbar');
 
-	//return String hh:mm
-	var getCurrentTime = function() {
-		var date = new Date();
-		return date.getHours() + ":" + date.getMinutes();
-	}
-
 	//ititialize custom scrollbar
 	$scrollbar.mCustomScrollbar({
 	 	scrollButtons: {
@@ -93,11 +87,15 @@ $(document).on('ready', function() {
 			'<li class="animated fadeInUp pure-g">'+ 
 				'<div class="user pure-u-1 pure-u-md-1-5">'+
 					data.username +
-					'<div class="time"> ['+ getCurrentTime() +']</div>'+
+					'<div class="time">' +
+						'<span data-livestamp="'+  Math.round(+new Date()/1000) + '"></span>' + 
+					'</div>'+
 				'</div>'+
-				'<div class="message pure-u-1 pure-u-md-4-5">'+ 
-					'<div class="arrow-left"></div>'+
-					data.msg +
+				'<div class="pure-u-1 pure-u-md-4-5">'+ 
+					'<div class="message">'+
+						'<div class="arrow-left"></div>'+
+						data.msg +
+					'</div>'+
 				'</div>'+ 	
 			'</li>'
 		);
@@ -109,7 +107,7 @@ $(document).on('ready', function() {
 	socket.on('show newUser', function(data){
 
 		var element = $('<li>')
-						.text(data.username + ' is online  ' + '['+ getCurrentTime()+']')
+						.text(data.username + ' is online  ' + '[ '+ moment().format('HH:mm') +' ]')
 						.addClass('text-center new-user animated fadeInUp');
 
 		element.prepend($('<i>').addClass('fa fa-user-plus'));
@@ -122,7 +120,7 @@ $(document).on('ready', function() {
 	socket.on('user offline', function(data){
 
 		var element = $('<li>')
-				.text(data.username + ' left the chat  ' + '['+ getCurrentTime()+']')
+				.text(data.username + ' left the chat  ' + '[ '+ moment().format('HH:mm') +' ]')
 				.addClass('text-center user-offline animated fadeInUp');
 
 		element.prepend($('<i>').addClass('fa fa-user-times'));

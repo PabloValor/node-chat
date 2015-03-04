@@ -38,7 +38,7 @@ gulp.task('compress-images', function() {
 });
 
 gulp.task('compress-javascript', function() {
-	gulp.src([paths.scripts.src + 'vendor/*.js', paths.scripts.src + 'main.js'])
+	gulp.src([paths.scripts.src + 'vendor/moment.js', paths.scripts.src + 'vendor/*.js', paths.scripts.src + 'main.js'])
 		.pipe(concat('main.js'))
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))

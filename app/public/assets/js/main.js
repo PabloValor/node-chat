@@ -6,7 +6,12 @@ $(document).on('ready', function() {
 	var $message = $('#m');
 	var socket = io();
 	var $scrollbar = $('section.mCustomScrollbar');
-	//var $textarea = $('textarea');
+
+	//return String hh:mm
+	var getCurrentTime = function() {
+		var date = new Date();
+		return date.getHours() + ":" + date.getMinutes();
+	}
 
 	//ititialize custom scrollbar
 	$scrollbar.mCustomScrollbar({
@@ -84,12 +89,6 @@ $(document).on('ready', function() {
 
 	//recive client message from the server and show it on browser
 	socket.on('chat message', function(data){
-
-		var getCurrentTime = function() {
-			var date = new Date();
-			return date.getHours() + ":" + date.getMinutes();
-		}
-
 		$('#messages').append(
 			'<li class="animated fadeInUp pure-g">'+ 
 				'<div class="user pure-u-1 pure-u-md-1-5">'+
@@ -110,7 +109,7 @@ $(document).on('ready', function() {
 	socket.on('show newUser', function(data){
 
 		var element = $('<li>')
-						.text(data.username + ' is online')
+						.text(data.username + ' is online  ' + '['+ getCurrentTime()+']')
 						.addClass('text-center new-user animated fadeInUp');
 
 		element.prepend($('<i>').addClass('fa fa-user-plus'));
@@ -123,7 +122,7 @@ $(document).on('ready', function() {
 	socket.on('user offline', function(data){
 
 		var element = $('<li>')
-				.text(data.username + ' left the chat')
+				.text(data.username + ' left the chat  ' + '['+ getCurrentTime()+']')
 				.addClass('text-center user-offline animated fadeInUp');
 
 		element.prepend($('<i>').addClass('fa fa-user-times'));

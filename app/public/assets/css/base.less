@@ -152,9 +152,15 @@ h1 {
 .logo {
 	&.light {
 		color: rgba(255,255,255,.7);
+		&:hover {
+			text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+		}
 	}
 	&.dark {
 		color: rgba(0,0,0,.4);
+		&:hover {
+			text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+		}
 	}
 	transition: 1s;
 	a {

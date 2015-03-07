@@ -11,7 +11,7 @@ $(document).on('ready', function(){
 			<header class="text-center">
 				<div class="_ribbon"></div>
 				<div class="_avatar _img-wrapper animated fadeInUp">
-					<img src="images/min/avatar.jpg" alt="Pablo Valor Avatar">	
+					<img src="images/min/avatar-2.jpg" alt="Pablo Valor Avatar">	
 				</div>
 			</header>
 			<div class="_content">

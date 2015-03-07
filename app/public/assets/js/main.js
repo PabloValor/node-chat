@@ -90,8 +90,11 @@ $(document).on('ready', function() {
 	});
 	
 	$('#send-messages-form').on('submit', function() {
-		message = $message.val();
-		socket.emit('chat message', message);
+		var data = {
+			message: $message.val(),
+			color: colorUser 
+		};
+		socket.emit('chat message', data);
 		$message.val('');
 		$message.focus();
 		return false;
@@ -102,7 +105,7 @@ $(document).on('ready', function() {
 		$('#messages').append(
 			'<li class="animated fadeInUp pure-g">'+ 
 				'<div class="user pure-u-1 pure-u-md-1-5">'+
-					'<span ' + ' style="border-bottom: 1px solid '+ colorUser +';">'+
+					'<span ' + ' style="border-bottom: 1px solid '+ data.colorUser +';">'+
 						data.username+
 					'</span>' +
 					'<div class="time">' +
@@ -110,15 +113,15 @@ $(document).on('ready', function() {
 					'</div>'+
 				'</div>'+
 				'<div class="pure-u-1 pure-u-md-4-5">'+ 
-					'<div class="message"' + 'style="background:'+ colorUser + ';">' +
-						'<div class="arrow-left" ' + 'style="border-right:10px solid '+ colorUser + ';"></div>'+
+					'<div class="message"' + 'style="background:'+ data.colorUser + ';">' +
+						'<div class="arrow-left" ' + 'style="border-right:10px solid '+ data.colorUser + ';"></div>'+
 						data.msg +
 					'</div>'+
 				'</div>'+ 	
 			'</li>'
 		);
 
-		updateScrollBar();
+		setTimeout(updateScrollBar(), 10);
 	});
 
 	//show message when new user is online

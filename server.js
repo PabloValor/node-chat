@@ -106,8 +106,8 @@ io.on('connection', function(socket){
 
 	io.sockets.emit('users counter', {usersCount: users});
 
-	socket.on('chat message', function(msg){
-		io.emit('chat message', {msg: msg, username: socket.session.username});
+	socket.on('chat message', function(data){
+		io.emit('chat message', {colorUser: data.color, msg: data.message, username: socket.session.username});
 	});
 
 	io.sockets.emit('show newUser', {username: socket.session.username});

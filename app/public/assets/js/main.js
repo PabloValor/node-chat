@@ -6,6 +6,22 @@ $(document).on('ready', function() {
 	var $message = $('#m');
 	var socket = io();
 	var $scrollbar = $('section.mCustomScrollbar');
+	var arrayColours = [
+						'rgba(86,79,233,.79)',
+						'rgba(33, 91, 240, 0.79)',
+						'rgba(45, 179, 92, 0.79)',
+						'rgba(224, 26, 102, 0.79)',
+						'rgba(231, 37, 21, 0.79)',
+						'rgba(167, 33, 182, 0.79)',
+						'rgba(51, 183, 200, 0.79)',
+						'rgba(179, 45, 45, 0.79)',
+						'rgba(45, 152, 179, 0.79)',
+						'rgba(69, 118, 212, 0.79)',
+						'rgba(26, 224, 195, 0.79)',
+						'rgba(160, 196, 89, 0.79)',
+						'rgba(250, 153, 19, 0.79)'
+					];
+	var colorUser = arrayColours[Math.floor(Math.random()*arrayColours.length)];
 
 	//ititialize custom scrollbar
 	$scrollbar.mCustomScrollbar({
@@ -86,14 +102,16 @@ $(document).on('ready', function() {
 		$('#messages').append(
 			'<li class="animated fadeInUp pure-g">'+ 
 				'<div class="user pure-u-1 pure-u-md-1-5">'+
-					data.username +
+					'<span ' + ' style="border-bottom: 1px solid '+ colorUser +';">'+
+						data.username+
+					'</span>' +
 					'<div class="time">' +
 						'<span data-livestamp="'+  Math.round(+new Date()/1000) + '"></span>' + 
 					'</div>'+
 				'</div>'+
 				'<div class="pure-u-1 pure-u-md-4-5">'+ 
-					'<div class="message">'+
-						'<div class="arrow-left"></div>'+
+					'<div class="message"' + 'style="background:'+ colorUser + ';">' +
+						'<div class="arrow-left" ' + 'style="border-right:10px solid '+ colorUser + ';"></div>'+
 						data.msg +
 					'</div>'+
 				'</div>'+ 	

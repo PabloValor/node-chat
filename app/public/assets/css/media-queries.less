@@ -48,7 +48,21 @@
 	.logo.icon-spacing {
 		margin-right: .1em;
 	}
-
+}
+@media screen and (max-width: 700px) {
+	.about-me header ._avatar {
+		left: 22%;
+	}
+}
+@media screen and (max-width: 600px) {
+	.about-me header{
+		._avatar {
+			position: initial;
+		}
+		._ribbon {
+			display: none;
+		}
+	}
 }
 
 
@@ -56,4 +70,7 @@
 	section {
 		height: 300px;
 	}
+	.about.me header ._avatar {
+			width: 150px;
+		}
 }

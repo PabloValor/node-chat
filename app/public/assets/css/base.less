@@ -218,28 +218,30 @@ h1 {
 		._ribbon {
 			height: 84px;
 			background: #6a5acd;
-			position: absolute;
+			position: relative;
 			width: 100%;
 			top: 34%;
 			&:before {
 				border-left: 25px solid white;
 				border-bottom: transparent 42px solid;
 				border-top: 42px solid transparent;
-				top: 14px;
-				left: 6px;
+				top: 0px;
+				left: 0px;
 				content: "";
-				display: block;
+				position: absolute;
+				display: inline-block;
 				height: 0;
 				width: 0;
 			}
 			&:after {
-				border-left: 25px solid white;
+				border-right: 25px solid white;
 				border-bottom: transparent 42px solid;
 				border-top: 42px solid transparent;
-				top: 14px;
-				left: 6px;
+				top: 0px;
+				right: 0px;
 				content: "";
-				display: block;
+				position: absolute;
+				display: inline-block;
 				height: 0;
 				width: 0;
 			}
@@ -247,6 +249,7 @@ h1 {
 		._avatar {
 			position: absolute;
 			left: 34%;
+			top: 0;
 		}
 	}
 	._content {

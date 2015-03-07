@@ -40,20 +40,26 @@ $(document).on('ready', function(){
 				</div>
 				<div class="_img-wrapper _body text-center">
 					<div class="_animation-icon-container animated fadeInLeft">
-						<span class="symbol logo light gmail big icon-spacing">
-							<a href="mailto:pablovalor89@gmail.com" target="_blank" title="E-mail">circleemail</a>
+						<span class="logo light gmail big icon-spacing">
+							<a href="mailto:pablovalor89@gmail.com" target="_blank" title="E-mail">
+								<i class="fa fa-envelope-o"></i>
+							</a>
 						</span>
 					</div>
 					
 					<div class="_animation-icon-container animated fadeInUp">
-						<span class="symbol logo light skype big icon-spacing">
-							<a href="skype:pablo.valor77?chat" target="_blank" title="Skype">circleskype</a>
+						<span class="logo light skype big icon-spacing">
+							<a href="skype:pablo.valor77?chat" target="_blank" title="Skype">
+								<i class="fa fa-skype"></i>
+							</a>
 						</span>
 					</div>
 					
 					<div class="_animation-icon-container animated fadeInRight">
-						<span class="symbol logo light linkedin big icon-spacing">
-							<a href="http://ar.linkedin.com/pub/pablo-alejandro-valor/7a/521/565" target="_blank" title="Linkedin">circlelinkedin</a>
+						<span class="logo light linkedin big icon-spacing">
+							<a href="http://ar.linkedin.com/pub/pablo-alejandro-valor/7a/521/565" target="_blank" title="Linkedin">
+								<i class="fa fa-linkedin"></i>
+							</a>
 						</span>
 					</div>
 				</div>	

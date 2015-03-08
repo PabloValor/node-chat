@@ -19,7 +19,13 @@ $(document).on('ready', function() {
 						'rgba(69, 118, 212, 0.79)',
 						'rgba(26, 224, 195, 0.79)',
 						'rgba(160, 196, 89, 0.79)',
-						'rgba(250, 153, 19, 0.79)'
+						'rgba(250, 153, 19, 0.79)',
+						'rgba(47, 79, 154, 0.79)',
+						'rgba(219, 220, 32, 0.79)',
+						'rgba(235, 81, 155, 0.79)',
+						'rgba(57, 172, 22, 0.79)',
+						'rgba(17, 17, 17, 0.79)',
+						'rgba(93, 91, 91, 0.79)'
 					];
 	var colorUser = arrayColours[Math.floor(Math.random()*arrayColours.length)];
 

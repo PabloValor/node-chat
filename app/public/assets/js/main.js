@@ -41,6 +41,22 @@ $(document).on('ready', function() {
 	//get the focus, ready to write 
 	$message.focus();
 
+	//getting the quote via ajax
+	$.ajax({
+		url: 'js/vendor/quotes.min.json',
+		type: 'GET',
+		contentType: 'application/json',
+		success: function (data) {
+			var phrase = data[Math.floor(Math.random() * data.length)];
+
+			$('#quote').text(phrase.quote);
+			$('#author').text(phrase.author);
+		},
+		error: function(data) {
+			console.log(data);
+		}
+	});
+
 
 	//if user click the logo, back to the home
 	$('#logo').on('click', function(event) {

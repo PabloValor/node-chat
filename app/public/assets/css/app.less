@@ -114,6 +114,47 @@ section {
 		}
 	}
 }
+//Quote
+.quote-wrapper {
+	position: relative;
+	&:hover{
+		transition: .7s;
+		#quote {
+			opacity: 0;
+		} 
+		#author {
+			position: absolute;
+			top: -.7em;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+	}
+
+	#quote, #author {
+		font-family: 'Poiret One', cursive;
+		font-weight: 300;
+		color: white;
+		transition: .7s;
+		letter-spacing: .1em;
+	}
+	#quote {
+		font-size: 1.1em;
+		font-style: italic;
+	}
+	#author {
+		display: none;
+		font-size: .8em;
+		font-weight: bold;
+		transition: .7em;
+		&:after, &:before {
+			font-weight: bold;
+			content: " - ";
+		}
+	}
+}
 
 //aside section
 .users {

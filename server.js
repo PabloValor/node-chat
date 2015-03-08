@@ -10,6 +10,7 @@ var http			= require('http'),
 	socketIOSession	= require('socket.io.session'),
 	cookieParser 	= require('cookie-parser'),
 	favicon 		= require('serve-favicon'),
+	sanitizeHtml 	= require('sanitize-html');
 	_ 				= require('underscore');
 
 var port = process.env.PORT || 3030;
@@ -107,7 +108,14 @@ io.on('connection', function(socket){
 	io.sockets.emit('users counter', {usersCount: users});
 
 	socket.on('chat message', function(data){
-		io.emit('chat message', {colorUser: data.color, msg: data.message, username: socket.session.username});
+
+		//sanitize msg to avoid xss attacks
+		var clearMsg = sanitizeHtml(data.message, {
+			allowedTags: [],
+			allowedAttributes: {}
+		});
+
+		io.emit('chat message', {colorUser: data.color, msg: clearMsg, username: socket.session.username});
 	});
 
 	io.sockets.emit('show newUser', {username: socket.session.username});
